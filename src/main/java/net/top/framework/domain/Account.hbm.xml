@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <!--
+        Created by the Middlegen Hibernate plugin 2.1
+
+        http://boss.bekk.no/boss/middlegen/
+        http://www.hibernate.org/
+    -->
+
+    <class name="net.top.framework.domain.Account" table="sys_account">
+        <cache usage="nonstrict-read-write"/>
+
+        <id name="id"
+            type="java.lang.Integer"
+            column="id"
+            unsaved-value="0">
+            <generator class="identity"/>
+        </id>
+
+        <property
+                name="account"
+                type="java.lang.String"
+                column="account"
+                length="50"
+        />
+        <property
+                name="password"
+                type="java.lang.String"
+                column="password"
+                length="50"
+        />
+        <property
+                name="isClose"
+                type="java.lang.Integer"
+                column="is_close"
+                length="10"
+        />
+
+        <property
+                name="roleNumber"
+                type="java.lang.Integer"
+                column="role_number"
+                length="10"/>
+
+        <many-to-one name="role" class="net.top.framework.domain.Role"  cascade="all" insert="false" update="false">
+            <column name="role_number" />
+        </many-to-one>
+
+        <property
+                name="name"
+                type="java.lang.String"
+                column="name"
+                length="255"
+        />
+        <property
+                name="sex"
+                type="java.lang.String"
+                column="sex"
+                length="10"
+        />
+        <property
+                name="mobile"
+                type="java.lang.String"
+                column="mobile"
+                length="255"
+        />
+        <property
+                name="email"
+                type="java.lang.String"
+                column="email"
+                length="255"
+        />
+        <property
+                name="address"
+                type="java.lang.String"
+                column="address"
+                length="255"
+        />
+        <property
+                name="photo"
+                type="java.lang.String"
+                column="photo"
+                length="255"
+        />
+        <property
+                name="remark"
+                type="java.lang.String"
+                column="remark"
+                length="65535"
+        />
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>

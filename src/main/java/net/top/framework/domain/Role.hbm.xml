@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <!--
+        Created by the Middlegen Hibernate plugin 2.1
+
+        http://boss.bekk.no/boss/middlegen/
+        http://www.hibernate.org/
+    -->
+
+    <class name="net.top.framework.domain.Role" table="sys_role" dynamic-update="true" dynamic-insert="true" lazy="false">
+        <cache usage="read-write" />
+        <id name="number" type="java.lang.Integer" column="number" unsaved-value="0">
+            <generator class="identity"/>
+        </id>
+
+        <property
+                name="name"
+                type="java.lang.String"
+                column="name"
+                length="255"
+        />
+        <property
+                name="remark"
+                type="java.lang.String"
+                column="remark"
+                length="65535"
+        />
+
+        <!-- Associations -->
+
+
+    </class>
+</hibernate-mapping>

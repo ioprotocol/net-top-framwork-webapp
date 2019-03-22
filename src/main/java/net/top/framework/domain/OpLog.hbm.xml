@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <!--
+        Created by the Middlegen Hibernate plugin 2.1
+
+        http://boss.bekk.no/boss/middlegen/
+        http://www.hibernate.org/
+    -->
+    <class name="net.top.framework.domain.OpLog" table="sys_op_log" >
+        <id name="id" type="java.lang.Integer" column="id" unsaved-value="0" >
+            <generator class="identity"/>
+        </id>
+        <property name="account" type="java.lang.String" column="account" />
+        <property name="name" type="java.lang.String" column="name" />
+        <property name="roleName" type="java.lang.String" column="role_name" />
+        <property name="opName" type="java.lang.String" column="op_name" />
+        <property name="opDescription" type="java.lang.String" column="op_description" />
+        <property name="opTime" type="java.util.Date" column="op_time" />
+        <property name="opIp" type="java.lang.String" column="op_ip" />
+    </class>
+</hibernate-mapping>

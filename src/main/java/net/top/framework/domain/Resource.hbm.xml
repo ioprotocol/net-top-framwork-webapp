@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <!--
+        Created by the Middlegen Hibernate plugin 2.1
+
+        http://boss.bekk.no/boss/middlegen/
+        http://www.hibernate.org/
+    -->
+
+    <class name="net.top.framework.domain.Resource" table="sys_resource">
+        <cache usage="read-write"/>
+        <id name="number" type="java.lang.Integer" column="number">
+            <generator class="identity"/>
+        </id>
+        <property
+                name="name"
+                type="java.lang.String"
+                column="name"
+                length="255"/>
+        <property
+                name="url"
+                type="java.lang.String"
+                column="url"
+                length="255"/>
+        <property
+                name="isShow"
+                type="java.lang.Short"
+                column="is_show"
+                length="5"/>
+        <property
+                name="order"
+                type="java.lang.Integer"
+                column="show_order"
+                length="10"/>
+        <property
+                name="resourceTypeId"
+                type="java.lang.Integer"
+                column="resource_type_id"
+                length="10"/>
+
+        <many-to-one name="resourceType" class="net.top.framework.domain.ResourceType" cascade="all" insert="false"
+                     update="false">
+            <column name="resource_type_id"/>
+        </many-to-one>
+        <!-- Associations -->
+    </class>
+</hibernate-mapping>
